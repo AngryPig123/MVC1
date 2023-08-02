@@ -86,4 +86,8 @@ public class RequestHeaderServlet extends HttpServlet {
                 request.getLocalPort()); //
     }
 
+    //  ToDO GET, POST, message Body 방식 설명 pdf, 블로그 정리 필요.
+
+    
+
 }
