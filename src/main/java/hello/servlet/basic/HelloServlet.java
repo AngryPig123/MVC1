@@ -38,6 +38,7 @@ public class HelloServlet extends HttpServlet {
         //  해당 설정을 하면 request, response 정보를 콘솔로 확인할 수 있다.
         //  서블릿 컨테이너 동작 방식 정리. 이전에 정리했던 servlet container 보여주면 될듯.
 
+        //  ToDO pdf 블로그에 정리.
 
 
 
