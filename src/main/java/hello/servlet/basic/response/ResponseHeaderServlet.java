@@ -29,7 +29,7 @@ public class ResponseHeaderServlet extends HttpServlet {
         });
 
         this.redirect(resp);
-//        resp.getWriter().write(stringBuilder.toString());
+        resp.getWriter().write(stringBuilder.toString());   //  이렇게 하면 리 다이렉트 되었기 때문에 사용할 수 없다고 나옴
 
     }
 
@@ -50,4 +50,3 @@ public class ResponseHeaderServlet extends HttpServlet {
     }
 
 }
-
