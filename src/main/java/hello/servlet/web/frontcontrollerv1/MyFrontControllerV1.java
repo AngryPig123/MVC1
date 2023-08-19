@@ -1,4 +1,4 @@
-package hello.servlet.web.frontcontroller;
+package hello.servlet.web.frontcontrollerv1;
 
 import hello.servlet.repotiroy.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -16,13 +16,13 @@ import java.util.Map;
 @WebServlet(name = "myFrontControllerV1", urlPatterns = "/v1/*")
 public class MyFrontControllerV1 extends HttpServlet {
 
-    private final Map<String, MyFrontController> controllerMap;
+    private final Map<String, FrontControllerV1> controllerMap;
 
     public MyFrontControllerV1(MemberRepository memberRepository) {
         this.controllerMap = new HashMap<>();
-        controllerMap.put("/v1/new-form", new MyFormController());
-        controllerMap.put("/v1/save", new MySaveController(memberRepository));
-        controllerMap.put("/v1/members", new MyMembersController(memberRepository));
+        controllerMap.put("/v1/new-form", new FormControllerV1());
+        controllerMap.put("/v1/save", new SaveControllerV1(memberRepository));
+        controllerMap.put("/v1/members", new MembersControllerV1(memberRepository));
     }
 
     @Override
@@ -32,8 +32,8 @@ public class MyFrontControllerV1 extends HttpServlet {
         log.info("requestURI = {}", requestURI);
 
         if (controllerMap.containsKey(requestURI)) {
-            MyFrontController myFrontController = controllerMap.get(requestURI);
-            myFrontController.process(req, resp);
+            FrontControllerV1 frontControllerV1 = controllerMap.get(requestURI);
+            frontControllerV1.process(req, resp);
         } else {
             log.error("error");
         }

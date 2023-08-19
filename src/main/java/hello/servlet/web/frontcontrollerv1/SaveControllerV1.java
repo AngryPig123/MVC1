@@ -1,9 +1,8 @@
-package hello.servlet.web.frontcontroller;
+package hello.servlet.web.frontcontrollerv1;
 
 import hello.servlet.domain.member.Member;
 import hello.servlet.repotiroy.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.RequestDispatcher;
@@ -13,12 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-@Component
-public class MySaveController implements MyFrontController {
+public class SaveControllerV1 implements FrontControllerV1 {
 
     private final MemberRepository memberRepository;
 
-    public MySaveController(MemberRepository memberRepository) {
+    public SaveControllerV1(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
